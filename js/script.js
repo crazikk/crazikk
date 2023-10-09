@@ -11,14 +11,16 @@ menuIcon.onclick = () => {
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
+let animationsPlayed = {}; // Objekt pro sledování stavu animací
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
+        let offset = sec.offsetTop - 750;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height && !animationsPlayed[id]) {
             // active navbar links
             navLinks.forEach(links => {
                 links.classList.remove('active');
@@ -26,9 +28,10 @@ window.onscroll = () => {
             });
             // active sections for animation on scroll
             sec.classList.add('show-animate');
+            animationsPlayed[id] = true; // Nastavíme stav animace na true
         }
         // if want to use animation that repeats on scroll use this
-        else {
+        else if (!animationsPlayed[id]) {
             sec.classList.remove('show-animate');
         }
     });
@@ -46,11 +49,11 @@ window.onscroll = () => {
     let footer = document.querySelector('footer');
     let scrollable = document.documentElement.scrollHeight - window.innerHeight;
     let scrolled = window.scrollY;
-
-    if (Math.ceil(scrolled) === scrollable) {
+    footer.classList.add('show-animate');
+    /*if (Math.ceil(scrolled) === scrollable) {
         footer.classList.add('show-animate');
     }
     else {
         footer.classList.remove('show-animate');
-    }
+    }*/
 }
