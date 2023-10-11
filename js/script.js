@@ -56,4 +56,23 @@ window.onscroll = () => {
     else {
         footer.classList.remove('show-animate');
     }*/
+
+    const buyButtons = document.querySelectorAll('.price-card .btn.buy-now');
+    const featureLists = document.querySelectorAll('.price-card .price-content .features');
+  
+    buyButtons.forEach((button, index) => {
+      button.addEventListener('mouseenter', () => {
+        featureLists[index].querySelectorAll('li').forEach((listItem) => {
+          listItem.style.color = '#232328';
+          listItem.style.fontWeight = 'bold'; // Přidáno pro změnu na tučný text
+        });
+      });
+  
+      button.addEventListener('mouseleave', () => {
+        featureLists[index].querySelectorAll('li').forEach((listItem) => {
+          listItem.style.color = 'var(--text-color)';
+          listItem.style.fontWeight = 'normal'; // Přidáno pro změnu na tučný text
+        });
+      });
+    });
 }
