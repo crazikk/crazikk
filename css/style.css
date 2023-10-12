@@ -350,53 +350,45 @@ span {
     background: var(--second-bg-color);
 }
 
+/* Základní styly pro price-card */
 .price-card {
-    display:flex    ; /* Přepneme zobrazování na flexbox */
-    justify-content: space-between; /* Rozložíme čtverce vedle sebe */
-    background: #2f2f36; /* Změníme barvu pozadí */
+    display: flex;
+    justify-content: space-between;
+    background: #2f2f36;
     border-radius: 1rem;
     padding: 5rem;
     box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    margin: 9.8%; /* Přidáme mezery mezi čtverci */
-    width: 30%; /* Nastavíme šířku tak, aby byly dva vedle sebe */
+    width: 30%;
     height: 45rem;
+    margin: 9.8%;
     float: left;
-    
+}
 
-  }
- 
-  
-  .price-card:hover {
-    transform: translateY(0); /* Zrušíme původní transformaci na hover */
+.price-card:hover {
+    transform: translateY(0);
     box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
     color: black;
-   
-  }
-  
-  .price-content {
+}
+
+.price-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Aby se obsah přizpůsobil novému rozložení */
-    
-  }
+    width: 100%;
+}
 
-  .price-card .price-content .features li {
+.price-card .price-content .features li {
     color: var(--text-color);
-    
-  }
-  
- 
-  
-  
-  .price-content .title {
+}
+
+.price-content .title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #fff;
-  }
-  
-  .price {
+}
+
+.price {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -404,21 +396,21 @@ span {
     background: var(--main-color);
     padding: 0.5rem 1rem;
     border-radius: 0.6rem;
-  }
-  
-  .features {
+}
+
+.features {
     list-style: none;
     margin-bottom: 2rem;
     padding: 0;
-  }
-  
-  .features li {
+}
+
+.features li {
     font-size: 1.6rem;
     margin-bottom: 1rem;
     color: #fff;
-  }
-  
-  .btn.buy-now {
+}
+
+.btn.buy-now {
     display: inline-block;
     padding: 1rem 2.5rem;
     background: var(--main-color);
@@ -429,15 +421,13 @@ span {
     border-radius: 0.6rem;
     transition: 0.5s;
     text-decoration: none;
-    
-  }
-  
-  .btn.buy-now:hover {
+}
+
+.btn.buy-now:hover {
     background: #039c9c;
-   
-  }
-  
-  .btn.buy-now::before {
+}
+
+.btn.buy-now::before {
     content: '';
     position: absolute;
     top: 0;
@@ -447,23 +437,54 @@ span {
     background: #005C64;
     z-index: -1;
     transition: 0.5s;
-    
-  }
-  
-  .btn.buy-now:hover::before {
+}
+
+.btn.buy-now:hover::before {
     width: 100%;
     background: var(--main-color);
     border-radius: 1.6rem;
-  }
-  
-  /* Add animations for a modern feel */
-  .price-card:hover .price {
-    transform: scale(1.1);
-    background: #039c9c;
-    font-weight: bold;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
-    
-  }
+}
+
+/* Responzivní styly pro price-card na menší obrazovky (např. Galaxy Fold) */
+@media (max-width: 768px) {
+    .price-card {
+        width: 90%;
+        margin: 5%;
+    }
+
+    .price-card .price-content {
+        padding: 2rem;
+    }
+
+    .price-card .price-content .title {
+        font-size: 2rem;
+    }
+}
+
+/* Responzivní styly pro price-card na ještě menší obrazovky (např. iPhone 12 Pro) */
+@media (max-width: 375px) {
+    .price-card {
+        width: 100%;
+        margin: 2rem 0;
+        height: auto;
+        box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+    }
+
+    .price-card .price-content {
+        padding: 1rem;
+    }
+
+    .price-card .price-content .title {
+        font-size: 1.8rem;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+}
+
+
+
 
   
 
