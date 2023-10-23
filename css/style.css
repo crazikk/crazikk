@@ -153,6 +153,40 @@ section {
     margin: 2rem 0 4rem;
 }
 
+.faq-item {
+    margin: 2rem 0;
+    border: 1px solid var(--main-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: var(--second-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.faq-item p {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+/* Přidat styl pro hover efekt na otázky */
+.faq-item:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Upravit vzhled aktivní otázky */
+.faq-item.active {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
 .btn-box {
     position: relative;
     display: flex;
