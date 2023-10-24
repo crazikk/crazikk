@@ -15,15 +15,15 @@
 <body>
     <!-- header design -->
     <header class="header">
-        <a href="#" class="logo">InfinityX<span class="animate" style="--i:1;"></span></a>
+        <a href="index.html" class="logo">InfinityX<span class="animate" style="--i:1;"></span></a>
 
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
 
         <nav class="navbar">
             <a href="index.html">Domů</a>
-            <a href="#about">O programu</a>
-            <a href="#price-list">Ceník</a>
-            <a href="#skills">Porovnání</a>
+            <a href="index.html#about">O programu</a>
+            <a href="index.html#price-list">Ceník</a>
+            <a href="index.html#skills">Porovnání</a>
             <a href="#faq" class="active">FAQ</a>
             <a href="#price-list">Přihlásit se</a>
 
@@ -32,10 +32,10 @@
         </nav>
     </header>
     <section>
-        <h2>FAQ</h2>
+        <h1 class="faqtext">Často kladené dotazy</h1>
 
         <div class="faq-item">
-            <h3>Jak dlouho trvá InfinityX STANDARD ?</h3>
+            <h3>Jak dlouho trvá optimalizace InfinityX STANDARD ?</h3>
             <p>Optimalizace STANDARD trvá běžně maximálně 10 minut</p>
         </div>
 
@@ -54,14 +54,17 @@
         </div>
         <div class="faq-item">
             <h3>Mám nějaké optimalizace z internetu, pomůže mi to i tak?</h3>
-            <p>JAno, můj program je obsažen spoustou konfigurací a optimalizací, které jentak na internetu nanajdete nebo byste museli opravdu dobře hledat. Je možné, že některé konfigurace se mohou shodovat, ale to jen v minimálním případě</p>
+            <p>Ano, můj program je obsažen spoustou konfigurací a optimalizací, které jentak na internetu nanajdete nebo byste museli opravdu dobře hledat. Je možné, že některé konfigurace se mohou shodovat, ale to jen v minimálním případě</p>
         </div>
         <div class="faq-item">
             <h3>Pokud by mi optimalizace nepomohla, dostanu peníze zpět?</h3>
             <p>Moje optimalizace jsou řádně otestovány na vícero jak 100 počítačích a 99% lidem výkon zvýšil. Zabralo mi desítky hodin vytvořit a otestovat spousty optimalizací, které by byly kompatiblní s řadou počítačů a poskytovaly ten nejlepší výkon pro velkou škálu lidí, tudíž peníze nevracím</p>
         </div>
-
-        <!-- Pokračujte dalšími otázkami a odpověďmi, jak je potřeba -->
+        <div class="faq-item">
+            <h3>Pomůže mi optimalizace ve všech videohrách ?</h3>
+            <p>Ano, moje optimalizace zvýší celkový výkon vašeho počítače, tudíž poznáte rozdíl ve výkonu ve všech videohrách</p>
+        </div>
+        
     </section>
 
 
@@ -69,16 +72,7 @@
 
 
 
-<script>
-    window.addEventListener("scroll", function() {
-        var header = document.querySelector(".header");
-        if (window.scrollY > 0) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    });
-    </script>
+
 
     
 <!-- footer design -->
@@ -96,6 +90,7 @@
     </div>
 </footer>
 
+<script src="js/scriptFAQ.js"></script>
 
 </body>
 </html>
