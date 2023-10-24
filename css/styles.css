@@ -1,0 +1,100 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container for login and register forms */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    
+    background: #232328; /* Use your preferred background color */
+}
+
+/* Form container for login and register */
+.form-container {
+    width: 50%; /* Smaller width */
+    background: #3f3f45;
+    border-radius: 1.5rem; /* Rounded corners */
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /*max-width: 80%;*/
+}
+
+.form-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: rgb(0,192,192); /* Text color */
+}
+
+/* Input boxes for username, email, and password */
+.input-box {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color:  rgb(0,192,192);
+    background: #3f3f45;
+    border-radius: 0.8rem; /* More rounded corners */
+    border: 0.2rem solid rgb(0,192,192); /* Use the preferred button color */
+    transition: 0.3s;
+}
+
+.input-box input::placeholder {
+    color: #a0a0a0;
+}
+
+.input-box input:focus {
+    border-color: rgb(0,192,192); /* Use the preferred button color */
+}
+
+/* Login and Register buttons */
+button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: rgb(0,192,192);
+    color:#3f3f45 ;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.8rem; /* More rounded corners */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: rgb(0,192,192);
+}
+
+/* Keyframes animation for input focus */
+@keyframes inputFocus {
+    100% {
+        width: 100%;
+    }
+}
+
+/* Additional styles for registration form */
+.register-form {
+    display: none;
+}
+
+/* Styles for active form (either login or register) */
+.active {
+    display: block;
+}
