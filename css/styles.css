@@ -10,7 +10,21 @@
     border: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 }
+:root {
+    --bg-color: #232328;
+    --second-bg-color: #232328;
+    --text-color: #ededed;
+    --main-color: rgb(0,192,192);
+}
+
+
+body {
+    background: #232328;
+    color: var(--text-color);
+}
+
 
 /* Container for login and register forms */
 .container {
@@ -18,25 +32,24 @@
     justify-content: space-around;
     align-items: center;
     min-height: 100vh;
-    
-    background: #232328; /* Use your preferred background color */
+    background: #232328;
 }
 
 /* Form container for login and register */
 .form-container {
-    width: 50%; /* Smaller width */
+    font-size: 100%;
+    width: 70%;
     background: #3f3f45;
-    border-radius: 1.5rem; /* Rounded corners */
-    padding: 2rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     text-align: center;
-    /*max-width: 80%;*/
 }
 
 .form-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: rgb(0,192,192); /* Text color */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgb(0, 192, 192);
 }
 
 /* Input boxes for username, email, and password */
@@ -47,12 +60,12 @@
 
 .input-box input {
     width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color:  rgb(0,192,192);
+    padding: 1rem;
+    font-size: 1rem;
+    color: rgb(0, 192, 192);
     background: #3f3f45;
-    border-radius: 0.8rem; /* More rounded corners */
-    border: 0.2rem solid rgb(0,192,192); /* Use the preferred button color */
+    border-radius: 0.8rem;
+    border: 0.2rem solid rgb(0, 192, 192);
     transition: 0.3s;
 }
 
@@ -60,41 +73,330 @@
     color: #a0a0a0;
 }
 
-.input-box input:focus {
-    border-color: rgb(0,192,192); /* Use the preferred button color */
-}
-
 /* Login and Register buttons */
 button {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background: rgb(0,192,192);
-    color:#3f3f45 ;
-    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    background: rgb(0, 192, 192);
+    color: #3f3f45;
+    font-size: 1rem;
     font-weight: 600;
     border: none;
-    border-radius: 0.8rem; /* More rounded corners */
+    border-radius: 0.8rem;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: rgb(0,192,192);
+    background: rgb(0, 192, 192);
 }
 
-/* Keyframes animation for input focus */
-@keyframes inputFocus {
-    100% {
-        width: 100%;
-    }
+/* CSS for the switch link */
+.switch-link {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #a0a0a0;
 }
 
-/* Additional styles for registration form */
+/* Hide the register form initially */
 .register-form {
     display: none;
 }
 
-/* Styles for active form (either login or register) */
+
+/* CSS for the active state (either login or register) */
 .active {
     display: block;
+}
+#switch-to-register {
+    color: rgb(0, 192, 192); /* Změňte tuto barvu na tu, kterou chcete */
+}
+#switch-to-login {
+    color: rgb(0, 192, 192); /* Změňte tuto barvu na tu, kterou chcete */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: #232328;
+}
+
+.logo {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    position:relative;
+    flex-direction: column; /* Nastaví řádkové rozložení položek */
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: .3s;
+    display: inline; /* Zobrazit položky na jednom řádku */
+    margin-right: 20px; /* Volitelně můžete nastavit mezery mezi položkami */
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    position: relative;
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+
+/* Style for the checkbox and its label */
+.input-box input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the label */
+.input-box label {
+    display: inline-block;
+    vertical-align: middle; /* Vertically align the label with the checkbox */
+}
+.input-box label a {
+    color: var(--main-color); /* Change the color to your desired color code */
+    /* You can also use color names or other color representations */
+}
+
+
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 850px) {
+    .animate.home-img {
+        width: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        background: var(--bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav {
+        left: 0;
+        transition-delay: .25s;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .home-imgHover {
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci {
+        width: 160px;
+    }
+
+    .home-sci a {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .education {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 371px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+}
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes homeBgText {
+
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
 }
